@@ -30,6 +30,10 @@ Maid.rules do
     `cd ~/.maid && git pull`
   end
 
+  rule 'Push pass changes up' do
+    `cd ~/.password-store && git push origin --all && git push github --all`
+  end
+
   rule 'Dump my temporary folder' do
     mkdir('~/tmp')
     trash('~/tmp')
